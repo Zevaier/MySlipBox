@@ -1,1 +1,44 @@
+# Title
+
+配置ssh服务
+
+---
+
+# Keywords
+
+模板, 笔记, 其他
+
+---
+# Content
+1. 修改sshd服务配置文件，设置端口为10022，允许远程密钥登陆
+```shell
+echo 'port 10022' >> /ect/ssh/sshd_config
+echo 'PermitRootLogin prohibit-password' >> /ect/ssh/sshd_config
+echo 'PermitRootLogin prohibit-password' >> /ect/ssh/sshd_config
+```
+2. 关闭selinux
+```shell
+sed -i 's/\(SELINUX=\)[a-z]*/\1disabled/' /etc/selinux/config
+reboot 0
+```
+
+3. 启动sshd，生成root的密钥
+```shell
+service sshd restart
+ssh-keygen -t rsa
+```
+<p align="right">2022.06.12</p>
+
+---
+# References
+
+(文中提及的参考文献)  
+[1] 2022, zhan..., "模板规范", 出版社名.
+
+---
+# Links
+
+(相关的笔记链接)  
+[1] [这是本篇的标题](./template.md)
+
 
