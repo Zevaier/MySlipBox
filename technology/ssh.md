@@ -16,6 +16,7 @@ echo 'port 10022' >> /ect/ssh/sshd_config
 echo 'PermitRootLogin prohibit-password' >> /ect/ssh/sshd_config
 echo 'PermitRootLogin prohibit-password' >> /ect/ssh/sshd_config
 ```
+
 2. 关闭selinux
 ```shell
 sed -i 's/\(SELINUX=\)[a-z]*/\1disabled/' /etc/selinux/config
@@ -26,8 +27,10 @@ reboot 0
 ```shell
 service sshd restart
 midkr /root/.ssh/authorized_keys
+chmod 700 /root
 chmod 700 /root/.ssh
 chmod 600 /root/.ssh/authorized_keys
+chown root /root/.ssh/authorized_keys
 ssh-keygen -t rsa
 ```
 <p align="right">2022.06.12</p>
