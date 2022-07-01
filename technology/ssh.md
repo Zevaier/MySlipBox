@@ -12,9 +12,9 @@
 # Content
 1. 修改sshd服务配置文件，设置端口为10022，允许远程密钥登陆
 ```shell
-echo 'port 10022' >> /ect/ssh/sshd_config
-echo 'PermitRootLogin prohibit-password' >> /ect/ssh/sshd_config
-echo 'PermitRootLogin prohibit-password' >> /ect/ssh/sshd_config
+echo 'port 10022' >> /etc/ssh/sshd_config
+echo 'PermitRootLogin prohibit-password' >> /etc/ssh/sshd_config
+echo 'PermitRootLogin prohibit-password' >> /etc/ssh/sshd_config
 ```
 
 2. 关闭selinux
