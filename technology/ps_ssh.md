@@ -39,8 +39,6 @@ ssh
 > reboot 0
 ```
 
-
-
 3. 生成root的密钥。
 ```shell
 > ssh-keygen -t rsa
