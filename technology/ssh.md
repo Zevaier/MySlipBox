@@ -27,14 +27,15 @@ reboot 0
 3. 启动sshd，生成root的密钥
 ```shell
 service sshd restart
-midkr /root/.ssh/authorized_keys
+ssh-keygen -t rsa
+mv ./{your_pubkey}.rsa /root/.ssh/authorized_keys
 chmod 700 /root
 chmod 700 /root/.ssh
 chmod 600 /root/.ssh/authorized_keys
 chown root /root/.ssh/authorized_keys
-ssh-keygen -t rsa
 ```
-<p align="right">2022.06.12</p>
+
+<p align="right">2022.07.03</p>
 
 ---
 # References
