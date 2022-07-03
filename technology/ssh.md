@@ -6,15 +6,16 @@
 
 # Keywords
 
-模板, 笔记, 其他
+ssh
 
 ---
 # Content
-1. 修改sshd服务配置文件，设置端口为10022，允许远程密钥登陆
+
+1. 修改sshd服务配置文件，设置端口为10022，允许远程密钥登陆，禁止远程密码登录。
 ```shell
 echo 'port 10022' >> /etc/ssh/sshd_config
 echo 'PermitRootLogin prohibit-password' >> /etc/ssh/sshd_config
-echo 'PermitRootLogin prohibit-password' >> /etc/ssh/sshd_config
+echo 'PasswordAuthentication no' >> /etc/ssh/sshd_config
 ```
 
 2. 关闭selinux
